@@ -36,7 +36,7 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
-        /* --- NAVBAR (Updated Logo Size) --- */
+        /* --- NAVBAR --- */
         header {
             position: fixed; top: 0; width: 100%; z-index: 1000;
             background: rgba(3, 5, 8, 0.95); backdrop-filter: blur(15px);
@@ -49,10 +49,10 @@
 
         .navbar {
             display: flex; justify-content: space-between; align-items: center; 
-            height: 90px; /* Tăng chiều cao navbar để chứa logo to */
+            height: 90px; 
         }
 
-        /* LOGO STYLING - UPDATED SIZE */
+        /* LOGO STYLING */
         .brand-container {
             display: flex;
             align-items: center;
@@ -61,7 +61,7 @@
         }
 
         .logo-img {
-            height: 70px; /* Tăng kích thước logo lên */
+            height: 70px; 
             width: auto;
             border-radius: 12px;
             border: 2px solid rgba(255,255,255,0.1);
@@ -153,19 +153,17 @@
         .tech-card p { font-size: 1rem; color: var(--text-muted); line-height: 1.7; }
 
         /* --- PHILOSOPHY (Căn chỉnh bố cục Ngang) --- */
-        /* Đây là phần chỉnh sửa quan trọng */
         .philosophy-container {
             display: flex; 
             gap: 50px; 
             align-items: center; 
             justify-content: space-between;
             margin-top: 50px;
-            flex-direction: row; /* Mặc định nằm ngang trên PC */
+            flex-direction: row; 
         }
         
-        /* Cột bên trái: Hình ảnh nháy nháy */
         .philo-visual {
-            width: 45%; /* Chiếm 45% chiều rộng */
+            width: 45%; 
             height: 450px; 
             background: #0b101a;
             border: 1px solid rgba(255,255,255,0.1); 
@@ -175,28 +173,22 @@
             align-items: center;
             border-radius: 20px; 
             overflow: hidden;
-            flex-shrink: 0; /* Không bị co lại */
+            flex-shrink: 0; 
         }
 
-        /* Animation vòng tròn */
         .circle {
             position: absolute; border: 1px solid var(--secondary); border-radius: 50%;
             animation: ripple 4s infinite linear;
         }
         @keyframes ripple { 0% { width: 0; height: 0; opacity: 1; border-width: 5px; } 100% { width: 400px; height: 400px; opacity: 0; border-width: 0px; } }
 
-        /* Cột bên phải: Nội dung text nằm dọc */
         .philo-content {
-            width: 50%; /* Chiếm 50% chiều rộng */
+            width: 50%; 
             display: flex;
-            flex-direction: column; /* Các mục con xếp dọc */
+            flex-direction: column; 
         }
 
-        .usp-list {
-            padding: 0;
-            margin: 0;
-        }
-
+        .usp-list { padding: 0; margin: 0; }
         .usp-list li {
             list-style: none; margin-bottom: 25px; display: flex; gap: 20px;
             background: rgba(255,255,255,0.02); padding: 25px; border-radius: 15px; border: 1px solid transparent; transition: 0.3s;
@@ -240,14 +232,24 @@
 
         /* --- FOOTER --- */
         footer { padding: 80px 0 30px; background: #020305; border-top: 1px solid #111; }
-        .footer-content { display: flex; flex-wrap: wrap; gap: 50px; justify-content: space-between; }
+        .footer-content { display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; }
         .footer-info h4 { color: var(--text-main); margin-bottom: 20px; font-family: 'Orbitron'; letter-spacing: 1px; }
-        .footer-info ul li { margin-bottom: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 10px; }
+        .footer-info ul { padding-left: 0; }
+        .footer-info ul li { list-style: none; margin-bottom: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 10px; }
+        
+        /* PDF Link Button Style */
+        .pdf-link {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 8px 15px; border: 1px solid var(--accent); border-radius: 5px;
+            color: var(--accent); text-decoration: none; font-weight: bold; font-size: 0.85rem;
+            transition: 0.3s;
+        }
+        .pdf-link:hover { background: var(--accent); color: #fff; box-shadow: 0 0 15px var(--accent); }
 
-        /* --- MOBILE RESPONSIVE (Màn hình dọc) --- */
+        /* --- MOBILE RESPONSIVE --- */
         @media (max-width: 992px) {
             .navbar { height: 70px; }
-            .logo-img { height: 50px; } /* Thu nhỏ logo một chút trên tablet/mobile */
+            .logo-img { height: 50px; } 
             .logo-text { font-size: 1.3rem; }
             
             .nav-links {
@@ -262,18 +264,9 @@
             .hero-content { padding-right: 0; margin-bottom: 40px;}
             .hero h1 { font-size: 2.5rem; }
             
-            /* Chuyển bố cục USP thành dọc trên mobile */
-            .philosophy-container { 
-                flex-direction: column; /* Quan trọng: Xếp dọc trên mobile */
-                gap: 30px;
-            }
-            .philo-visual { 
-                width: 100%; /* Chiếm hết chiều rộng */
-                height: 350px; 
-            }
-            .philo-content {
-                width: 100%;
-            }
+            .philosophy-container { flex-direction: column; gap: 30px; }
+            .philo-visual { width: 100%; height: 350px; }
+            .philo-content { width: 100%; }
             
             .sim-dashboard { flex-direction: column; padding: 20px; }
             .sim-display::before { display: none; }
@@ -312,7 +305,7 @@
             <div style="color: var(--primary); font-weight: bold; margin-bottom: 15px; letter-spacing: 2px; display:inline-block; border: 1px solid var(--primary); padding: 5px 15px; border-radius: 20px;">
                 <i class="fas fa-bolt"></i> CTECH INNOVATION
             </div>
-            <h1>Giải pháp <br><span class="gradient-text">AI và IOT cho giao thông</span></h1>
+            <h1>Giải pháp  <br><span class="gradient-text">AI và IOT cho giao thông</span></h1>
             <p>Hệ thống điều khiển tín hiệu thích ứng sử dụng AI Vision và IoT Edge. Giải pháp đột phá cho đô thị thông minh, giảm ùn tắc hiệu quả với chi phí tối thiểu.</p>
             <div style="margin-top: 35px;">
                 <a href="#simulator" class="btn-main"><i class="fas fa-play"></i> Xem Demo</a>
@@ -330,7 +323,7 @@
         <div class="section-title">
             <span>CORE TECHNOLOGY</span>
             <h2>Công Nghệ Lõi</h2>
-            [cite_start]<p>Sự kết hợp hoàn hảo giữa Phần cứng mạnh mẽ và Thuật toán thông minh [cite: 53-69].</p>
+            <p>Sự kết hợp hoàn hảo giữa Phần cứng mạnh mẽ và Thuật toán thông minh.</p>
         </div>
         <div class="tech-grid">
             <div class="tech-card">
@@ -341,12 +334,12 @@
             <div class="tech-card">
                 <i class="fas fa-brain"></i>
                 <h3>RHODES Logic</h3>
-                [cite_start]<p>Thuật toán tối ưu hóa phân cấp [cite: 80-94]. Tự động tính toán thời gian xanh ($GT_{next}$) dựa trên mật độ xe thực tế thay vì chu kỳ cố định.</p>
+                <p>Thuật toán tối ưu hóa phân cấp. Tự động tính toán thời gian xanh ($GT_{next}$) dựa trên mật độ xe thực tế thay vì chu kỳ cố định.</p>
             </div>
             <div class="tech-card">
                 <i class="fas fa-wifi"></i>
                 <h3>IoT Edge Control</h3>
-                [cite_start]<p>Vi điều khiển ESP32 xử lý tại biên, đảm bảo hoạt động liên tục (Fail-safe) ngay cả khi mất kết nối máy chủ [cite: 160-166].</p>
+                <p>Vi điều khiển ESP32 xử lý tại biên, đảm bảo hoạt động liên tục (Fail-safe) ngay cả khi mất kết nối máy chủ.</p>
             </div>
         </div>
     </section>
@@ -433,15 +426,12 @@
 
             <div class="sim-display">
                 <div class="ai-scan-overlay" id="aiScan"></div>
-                
                 <div id="aiStatus" style="font-family: 'Courier New', monospace; color: var(--primary); margin-bottom: 25px; min-height: 24px; font-weight: bold;">> HỆ THỐNG SẴN SÀNG</div>
-                
                 <div class="traffic-pole">
                     <div class="bulb red" id="l-red"></div>
                     <div class="bulb yellow" id="l-yellow"></div>
                     <div class="bulb green" id="l-green"></div>
                 </div>
-                
                 <div style="margin-top: 30px;">
                     <span style="color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;">Thời gian xanh dự kiến</span>
                     <h1 id="timer" style="font-size: 5rem; color: var(--text-main); font-family: 'Orbitron'; line-height: 1; text-shadow: 0 0 20px rgba(255,255,255,0.2);">--</h1>
@@ -455,8 +445,8 @@
             <div class="footer-content">
                 <div style="flex: 1.5; min-width: 300px;">
                     <a href="#" class="brand-container" style="margin-bottom: 20px; display: inline-flex;">
-                        <img src="image/logo.jpg" alt="Logo" style="height: 50px; border-radius: 8px;">
-                        <span style="font-size: 1.3rem; font-weight: 900; color: #fff; margin-left: 10px; align-self: center;">SMARTFLOW</span>
+                        <img src="image/logo.jpg" alt="Logo" style="height: 40px; border-radius: 5px;">
+                        <span style="font-size: 1.2rem; font-weight: 900; color: #fff; margin-left: 10px; align-self: center;">SMARTFLOW</span>
                     </a>
                     <p style="color: #777; line-height: 1.8;">Dự án đạt giải Khoa học Kỹ thuật cấp Thành phố (2025-2026).<br>Giải pháp tiên phong cho hạ tầng giao thông thông minh bền vững.</p>
                 </div>
@@ -466,14 +456,22 @@
                     <ul>
                         <li><i class="fas fa-user-circle"></i> Đinh Xuân Trường (12/3)</li>
                         <li><i class="fas fa-user-circle"></i> Nguyễn Nhất Nguyên (12/3)</li>
+                        <li><i class="fas fa-user-circle"></i> Lê Văn Quốc Hùng (12/8)</li>
+                        <li><i class="fas fa-user-circle"></i> Lê Quang Thành (11/3)</li>
+                        <li><i class="fas fa-user-circle"></i> Phạm Bảo Minh Hân (10/8)</li>
                         <li style="margin-top: 10px; font-size: 0.85rem;"><i class="fas fa-school"></i> THPT Cao Thắng - TP. Huế</li>
                     </ul>
                 </div>
 
                 <div class="footer-info" style="flex: 1; min-width: 250px;">
-                    <h4>HƯỚNG DẪN</h4>
+                    <h4>HƯỚNG DẪN & PHÁP LÝ</h4>
                     <ul>
                         <li><i class="fas fa-chalkboard-teacher" style="color: var(--secondary)"></i> ThS. Nguyễn Thị Lan Anh</li>
+                        <li style="margin-top: 15px;">
+                            <a href="pdf/phieu_xac_nhan.pdf" target="_blank" class="pdf-link">
+                                <i class="fas fa-file-contract"></i> Xem Phiếu Xác Nhận
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -484,24 +482,12 @@
     </footer>
 
     <script>
-        // Toggle Menu
-        function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        }
-
-        // Close menu when clicking a link (Mobile UX)
+        function toggleMenu() { document.querySelector('.nav-links').classList.toggle('active'); }
         document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.nav-links').classList.remove('active');
-            });
+            link.addEventListener('click', () => { document.querySelector('.nav-links').classList.remove('active'); });
         });
+        function updateCarVal(val) { document.getElementById('carValue').innerText = val; }
 
-        // Slider Update
-        function updateCarVal(val) {
-            document.getElementById('carValue').innerText = val;
-        }
-
-        // Logic Mô phỏng
         const GT_MIN = 15, GT_MAX = 50, N_MIN = 5, N_MAX = 50;
         let simInterval;
 
@@ -512,36 +498,26 @@
             const timerDisplay = document.getElementById('timer');
             const btn = document.querySelector('.btn-main');
             
-            // Reset Lights
             document.getElementById('l-red').classList.remove('on');
             document.getElementById('l-yellow').classList.remove('on');
             document.getElementById('l-green').classList.remove('on');
             clearInterval(simInterval);
             timerDisplay.innerText = "--";
-            btn.disabled = true;
-            btn.style.opacity = "0.5";
+            btn.disabled = true; btn.style.opacity = "0.5";
 
-            // Hiệu ứng AI Scanning
             status.innerText = "> ĐANG QUÉT & PHÂN TÍCH DỮ LIỆU...";
             scanOverlay.style.display = "block";
 
             setTimeout(() => {
-                // Tính toán (Delay 1.5s giả lập xử lý)
                 scanOverlay.style.display = "none";
                 let gtNext = 0;
-
                 if (n <= N_MIN) gtNext = GT_MIN;
                 else if (n >= N_MAX) gtNext = GT_MAX;
                 else gtNext = GT_MIN + ((n - N_MIN) / (N_MAX - N_MIN)) * (GT_MAX - GT_MIN);
-                
                 gtNext = Math.round(gtNext);
-                
                 status.innerHTML = `> KẾT QUẢ: <span style="color:#fff">N=${n}</span> → GREEN TIME: <span style="color:var(--primary)">${gtNext}s</span>`;
                 runGreen(gtNext);
-                
-                btn.disabled = false;
-                btn.style.opacity = "1";
-
+                btn.disabled = false; btn.style.opacity = "1";
             }, 1500);
         }
 
@@ -549,17 +525,11 @@
             const green = document.getElementById('l-green');
             const timer = document.getElementById('timer');
             green.classList.add('on');
-            let t = time;
-            timer.innerText = t;
-
+            let t = time; timer.innerText = t;
             simInterval = setInterval(() => {
-                t--;
-                timer.innerText = t;
-                if(t <= 0) {
-                    clearInterval(simInterval);
-                    runYellow();
-                }
-            }, 100); // Tốc độ nhanh để demo (100ms = 1s thực tế)
+                t--; timer.innerText = t;
+                if(t <= 0) { clearInterval(simInterval); runYellow(); }
+            }, 100);
         }
 
         function runYellow() {
@@ -567,7 +537,6 @@
             document.getElementById('l-yellow').classList.add('on');
             document.getElementById('timer').innerText = "3";
             document.getElementById('aiStatus').innerText = "> CHUYỂN PHA: VÀNG (GIẢM TỐC)";
-
             setTimeout(() => {
                 document.getElementById('l-yellow').classList.remove('on');
                 document.getElementById('l-red').classList.add('on');
