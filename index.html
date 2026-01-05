@@ -75,7 +75,7 @@
         .tech-card h3 { margin-bottom: 10px; font-size: 1.3rem; color: var(--text-main); }
         .tech-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 5px; }
         
-        /* READ MORE LINK STYLE - ĐÃ XÓA MŨI TÊN */
+        /* READ MORE LINK STYLE */
         .read-more-btn { 
             display: block; 
             margin-top: 0px;
@@ -112,7 +112,6 @@
         .ratio-16-9 { aspect-ratio: 16/9; }
         .ratio-phone { aspect-ratio: 9/19; max-width: 300px; margin: 0 auto; }
         .ratio-square { aspect-ratio: 1/1; }
-        /* Tỷ lệ ảnh chi phí: 2:3 (Rộng hơn 1:3 thêm 1/3 chiều rộng) */
         .ratio-tall { aspect-ratio: 2/3; max-width: 500px; margin: 0 auto; width: 100%; }
 
         /* LIGHTBOX */
@@ -139,6 +138,61 @@
         .usp-list i { color: var(--primary); font-size: 1.8rem; margin-top: 5px; flex-shrink: 0; }
         .usp-list div { width: 100%; }
         .usp-list p { margin-bottom: 0; font-size: 0.9rem; }
+
+        /* === NEW VIDEO SECTION STYLE === */
+        .video-highlight {
+            position: relative;
+            width: 100%;
+            max-width: 400px; /* Width for Short Video */
+            margin: 0 auto;
+            border-radius: 20px;
+            padding: 10px;
+            background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(0,0,0,0.5));
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.1);
+        }
+        
+        .video-frame {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9/16; /* Shorts Ratio */
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #000;
+        }
+
+        .video-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-decor {
+            position: absolute;
+            top: -10px; left: -10px; right: -10px; bottom: -10px;
+            border: 1px dashed var(--primary);
+            border-radius: 25px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .video-tag {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.6);
+            color: #ff0055;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border: 1px solid #ff0055;
+            z-index: 10;
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink { 50% { opacity: 0.5; } }
+        /* === END VIDEO STYLE === */
 
         /* SIMULATOR & FOOTER */
         .sim-section { background: #000; border-top: 1px solid #111; border-bottom: 1px solid #111; }
@@ -197,7 +251,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#core">Công Nghệ</a></li>
                 <li><a href="#usp">Ưu Điểm</a></li>
-                <li><a href="#simulator">Mô Phỏng</a></li>
+                <li><a href="#video-demo">Video</a></li> <li><a href="#simulator">Mô Phỏng</a></li>
                 <li><a href="#team">Liên Hệ</a></li>
             </ul>
             <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
@@ -296,6 +350,27 @@
         </div>
     </section>
 
+    <section id="video-demo" class="section-padding" style="background: linear-gradient(180deg, var(--bg-dark) 0%, #080c14 100%);">
+        <div class="container">
+            <div class="section-title">
+                <span>REAL-TIME FOOTAGE</span>
+                <h2>Video Thực Tế</h2>
+                <p>Hình ảnh ghi lại quá trình vận hành của hệ thống SmartFlow.</p>
+            </div>
+            <div class="video-highlight">
+                <div class="video-decor"></div>
+                <div class="video-frame">
+                    <div class="video-tag"><i class="fas fa-circle" style="font-size: 0.5rem; margin-right: 5px;"></i> REC</div>
+                    <iframe 
+                        src="video/video_1.mp4"
+                        title="SmartFlow Demo" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="simulator" class="sim-section section-padding">
         <div class="section-title">
             <span>LIVE DEMO</span>
